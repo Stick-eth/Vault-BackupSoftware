@@ -1,6 +1,6 @@
 # Vault - File Backup Application
 
-Welcome to Vault, a simple and secure file backup solution.
+Welcome to Vault, a simple and secure file backup solution. Made with Luc MAERTEN, Axel EUDIER, Kadijé PAYE and Aniss SEJEAN
 
 ## Installation
 
@@ -12,7 +12,7 @@ For detailed instructions on how to use Vault, please refer to the provided user
 
 ## Contact
 
-If you have any questions or issues regarding the use of Vault, please don't hesitate to contact us at the following email address: [luc.maerten@viacesi.fr](mailto:luc.maerten@viacesi.fr). We'll be happy to assist you.
+If you have any questions or issues regarding the use of Vault, please don't hesitate to contact us at the following email address: [aniss.sejean@viacesi.fr](mailto:aniss.sejean@viacesi.fr). We'll be happy to assist you.
 
 Thank you for choosing Vault for your file backup needs!
 
