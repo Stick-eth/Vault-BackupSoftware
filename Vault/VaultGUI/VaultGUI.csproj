@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\customer_page.png" />
+    <None Remove="Images\Duplicate-bro.png" />
+    <None Remove="Images\img_backups.png" />
+    <None Remove="Images\img_configuration.png" />
+    <None Remove="Images\img_home.png" />
+    <None Remove="Images\img_settings.png" />
+    <None Remove="Images\img_splash.png" />
+    <None Remove="Images\shutdown_def.png" />
+    <None Remove="Images\shutdown_mo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VaultGUI Client\VaultGUI Client.csproj" />
+    <ProjectReference Include="..\Vault\Vault.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Fonts\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\customer_page.png" />
+    <Resource Include="Images\Duplicate-bro.png" />
+    <Resource Include="Images\img_backups.png" />
+    <Resource Include="Images\img_configuration.png" />
+    <Resource Include="Images\img_home.png" />
+    <Resource Include="Images\img_settings.png" />
+    <Resource Include="Images\img_splash.png" />
+    <Resource Include="Images\shutdown_def.png" />
+    <Resource Include="Images\shutdown_mo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Assets\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,134 @@
+﻿<UserControl x:Class="VaultGUI.View.Settings"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VaultGUI.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="622"
+             Style="{StaticResource Page_Style}">
+    <UserControl.Resources>
+        <Color x:Key="blue">#FF1E90FF</Color>
+        <Color x:Key="orange">#FF7F00</Color>
+        <SolidColorBrush x:Key="ToggleButtonBackground" Color="{StaticResource blue}"/>
+        <ControlTemplate x:Key="togleButtonControlTemplate" TargetType="{x:Type ToggleButton}">
+            <Border x:Name="border"
+                    Background="{DynamicResource ToggleButtonBackground}"
+                    CornerRadius="12"
+                    SnapsToDevicePixels="True">
+                <Canvas Background="Transparent">
+                    <Ellipse x:Name="ellipse"
+                             Fill="White"
+                             Width="19" Height="19"
+                             Canvas.Left="3" Canvas.Top="3"
+                             SnapsToDevicePixels="True"/>
+                </Canvas>
+            </Border>
+        </ControlTemplate>
+    </UserControl.Resources>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+
+
+
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto" MinHeight="60"/>
+                <RowDefinition Height="Auto" MinHeight="60"/>
+                <RowDefinition Height="Auto" MinHeight="60"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+
+            <TextBlock x:Name="SettingsTitle" Grid.Row="0" Foreground="#DDFFFFFF" FontSize="24" FontWeight="Bold" Margin="0,0,0,20" TextAlignment="Center">Paramètres de l'application</TextBlock>
+
+            <Border Grid.Row="1" Background="#FF2E2E2E" Margin="6,5,4,5" Padding="10" CornerRadius="5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" HorizontalAlignment="Left">
+                        <TextBlock x:Name="LangTitle" Foreground="#DDFFFFFF" FontSize="16" FontWeight="Bold"  Margin="0,0,0,10"></TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <RadioButton x:Name="LangFrench" Content="Français" Foreground="White" Margin="0,0,20,0" Checked="LangFrench_Checked"/>
+                            <RadioButton x:Name="LangEnglish" Content="English" Foreground="White" Checked="LangEnglish_Checked"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1"  HorizontalAlignment="Center">
+
+                    </StackPanel>
+
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="2" Background="#FF2E2E2E" Margin="5,5,5,5" Padding="10" CornerRadius="5">
+                <StackPanel>
+                    <TextBlock x:Name="LogPathTitle" Foreground="#DDFFFFFF" FontSize="16" FontWeight="Bold" Margin="0,0,0,10">Emplacement Log</TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="TargetFolderLog" Content="Select folder" Click="TargetFolderLog_Click" Margin="0,0,10,0"/>
+                        <TextBlock x:Name="FolderLog" Foreground="#DDFFFFFF"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Row="3" Background="#FF2E2E2E" Margin="5,5,5,5" Padding="10" CornerRadius="5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Name="BusinessAppTitle" Grid.Row="0" Foreground="#DDFFFFFF" FontSize="16" FontWeight="Bold" Margin="0,0,0,10">Applications métier</TextBlock>
+
+                    <StackPanel Grid.Row="1" Grid.Column="0" Width="200">
+                        <TextBlock x:Name="SelectedApps" Foreground="#DDFFFFFF" FontSize="16.5" Margin="0,0,0,10">Applications sélectionnées</TextBlock>
+                        <ListBox x:Name="MonitoredApplications" Background="#FF1E1E1E" Foreground="White" Height="100">
+                        </ListBox>
+                        <Button x:Name="RemoveFromList" Content="Supprimer" Margin="5,5,0,0" Click="RemoveFromList_Click"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1" Grid.Column="1" Width="200">
+                        <TextBlock x:Name="AddApp" Foreground="#DDFFFFFF" FontSize="16.5" Margin="0,0,0,10">Ajouter une application</TextBlock>
+                        <TextBox x:Name="NewMonitoredApp" CaretBrush="White" Foreground="#DDFFFFFF" Background="#FF1E1E1E" Margin="0,0,0,5"/>
+                        <Button x:Name="AddToList"  Content="Ajouter" Margin="5,5,0,0" Click="AddToList_Click"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="4" Background="#FF2E2E2E" Margin="5,5,5,5" Padding="10" CornerRadius="5">
+                <StackPanel>
+                    <TextBlock Foreground="#DDFFFFFF" FontSize="16" FontWeight="Bold" Margin="0,0,0,10">Mode:</TextBlock>
+                    <RadioButton x:Name="ServerMode" Content="Serveur" Foreground="White" Margin="0,0,0,5" Checked="ServerMode_Checked"/>
+                    <RadioButton x:Name="ClientMode" Content="Client" Foreground="White" Margin="0,0,0,5" Checked="ClientMode_Checked"/>
+                    <Button x:Name="LaunchServerButton" Content="Lancer le serveur" Visibility="Collapsed" Click="LaunchServerButton_Click"/>
+                    <StackPanel Orientation="Horizontal"  x:Name="ClientDetailsPanel">
+                        <TextBox x:Name="ServerIP" Width="120" Margin="0,0,5,0" Foreground="White"/>
+                        <TextBox x:Name="ServerPort" Width="80" Foreground="White" />
+                        <Button x:Name="ConnectToServerButton" Content="Connexion" Click="ConnectToServerButton_Click"/>
+
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+
+
+            <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Right" Grid.RowSpan="2">
+                <Button x:Name="SaveButton" Content="Save" Click="SaveButton_Click" Margin="0,10"/>
+            </StackPanel>
+
+            <TextBlock Grid.Row="6" Foreground="#DDFFFFFF" Margin="0,20,0,20" TextAlignment="Center">Version: Snapshot 12b.3a.76</TextBlock>
+
+
+
+
+        </Grid>
+    </ScrollViewer>
+</UserControl>

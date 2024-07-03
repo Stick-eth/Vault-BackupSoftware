@@ -1,0 +1,94 @@
+﻿<Window x:Class="VaultGUI_Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VaultGUI_Client" xmlns:local1="clr-namespace:VaultGUI_Client.View"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        Height="700" Width="800"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        Background="#212529"
+        WindowStartupLocation="CenterScreen" MouseDown="Window_MouseDown">
+    <Border CornerRadius="10" Background="#212529" Margin="0,0,0,-356">
+        <Grid Margin="20,20,20,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="47*"/>
+                <ColumnDefinition Width="93*"/>
+                <ColumnDefinition Width="225*"/>
+                <ColumnDefinition Width="394*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto" ></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="BackupListTitle" Grid.Row="0" Grid.ColumnSpan="4" Foreground="#DDFFFFFF" FontSize="24" FontWeight="Bold" Margin="0,0,0,20" TextAlignment="Center">Liste des backups</TextBlock>
+
+            <!-- Button to disconnect the client connection to server -->
+            <Border Grid.Row="0" Grid.Column="3" HorizontalAlignment="Right" VerticalAlignment="Top" Background="#FFB76E6E" CornerRadius="10">
+                <Button x:Name="DisconnectButton"  Content="Disconnect" Width="100" Height="30" Click="DisconnectButton_Click"  Foreground="White" FontSize="14" Background="{x:Null}" BorderBrush="{x:Null}" Focusable="False" >
+                    <Button.Effect>
+                        <DropShadowEffect BlurRadius="0" Color="#FF1B2225" Opacity="0.7" RenderingBias="Quality" ShadowDepth="2"/>
+                    </Button.Effect>
+                </Button>
+            </Border>
+
+            <Grid Grid.Row="2" Grid.ColumnSpan="4" Margin="0,0,0,39" Grid.RowSpan="2">
+
+                <DataGrid IsReadOnly="False" x:Name="datagridBackupJob" AutoGenerateColumns="False" Width="Auto" SelectionChanged="datagridBackupJob_SelectionChanged" HorizontalAlignment="Stretch" CanUserSortColumns="False" FontSize="14" ForceCursor="True"  ScrollViewer.CanContentScroll="True">
+                    <DataGrid.Columns>
+                        <DataGridCheckBoxColumn IsReadOnly="False" x:Name="chkSelectedServer" MaxWidth="50"/>
+                        <DataGridTextColumn x:Name="HeaderName" Header="Name" Binding="{Binding Name}" FontSize="10" FontFamily="Poppins" />
+                        <DataGridTextColumn x:Name="HeaderSourceDirectory" Header="sourceDirectory" Binding="{Binding FileSource}" FontSize="10" FontFamily="Poppins" />
+                        <DataGridTextColumn x:Name="HeaderTargetDirectory" Header="targetDirectory" Binding="{Binding FileTarget}" FontSize="10" FontFamily="Poppins" />
+                        <DataGridTextColumn x:Name="HeaderType" Header="type" Binding="{Binding SaveType}" FontSize="10" FontFamily="Poppins"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+            <Label Grid.Row="4" Grid.ColumnSpan="4"  Margin="0,38,0,0" Grid.RowSpan="2">
+                <Button x:Name="RunSelectedJob" Click="RunSelectedJob_Click" Background="#FF6E97B7" Foreground="#FFE8E8E8" BorderBrush="#FF272B2F" Width="750" FontFamily="Segoe UI Variable Small Semibold" FontSize="20">Run</Button>
+            </Label>
+
+            <Grid Grid.Row="5" Grid.ColumnSpan="4" Margin="0,39,0,0" Grid.RowSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="17*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="735*"/>
+                </Grid.ColumnDefinitions>
+
+                <DataGrid IsReadOnly="True" x:Name="datagridActiveJob" AutoGenerateColumns="False" Width="Auto" SelectionChanged="datagridBackupJob_SelectionChanged" CanUserSortColumns="False" Grid.ColumnSpan="3"  FontSize="14" BorderBrush="Black"  Margin="-7,67,7,-67">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn x:Name="HeaderActiveName" Header="Name" Binding="{Binding Name}" FontSize="10" FontFamily="Poppins" />
+                        <DataGridTextColumn x:Name="HeaderActiveIsPosed" Header="IsPaused" Binding="{Binding IsPaused}" FontSize="10" FontFamily="Poppins" />
+                        <DataGridTextColumn x:Name="HeaderActiveTargetDirectory" Header="Progress" Binding="{Binding Progress}" FontSize="10" FontFamily="Poppins" />
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button x:Name="PauseResume" Content="Pause/Resume" Click="PauseResumeButton" Background="#FF6E97B7" Foreground="White"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button x:Name="Stop" Content="Stop" Click="Stop_Button" Background="#FFB76E6E" Foreground="White" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
+
+
+
+    
+    

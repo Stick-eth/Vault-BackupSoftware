@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="VaultGUI_Client.View.Client"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d"
+             >
+
+    <Border CornerRadius="10" Background="#212529">
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="42*"/>
+            <ColumnDefinition Width="641*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto" ></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="BackupListTitle" Grid.Row="0" Grid.ColumnSpan="2" Foreground="#DDFFFFFF" FontSize="24" FontWeight="Bold" Margin="0,0,0,20" TextAlignment="Center">Liste des backups</TextBlock>
+
+		<!-- Button to disconnect the client connection to server -->
+				<Button x:Name="DisconnectButton" Grid.Row="0" Grid.Column="1" Content="Disconnect" HorizontalAlignment="Right" VerticalAlignment="Top" Width="100" Height="30" Margin="0,0,0,20" Click="DisconnectButton_Click" />
+		
+        <Grid Grid.Row="2" Grid.ColumnSpan="2">
+
+            <DataGrid IsReadOnly="False" x:Name="datagridBackupJob" AutoGenerateColumns="False" Width="Auto" SelectionChanged="datagridBackupJob_SelectionChanged"  HorizontalAlignment="Stretch" CanUserSortColumns="False">
+                <DataGrid.Columns>
+                    <DataGridCheckBoxColumn IsReadOnly="False" x:Name="chkSelectedServer" MaxWidth="50"/>
+                    <DataGridTextColumn x:Name="HeaderName" Header="Name" Binding="{Binding Name}" FontSize="10" FontFamily="Poppins" />
+                    <DataGridTextColumn x:Name="HeaderSourceDirectory" Header="sourceDirectory" Binding="{Binding FileSource}" FontSize="10" FontFamily="Poppins" />
+                    <DataGridTextColumn x:Name="HeaderTargetDirectory" Header="targetDirectory" Binding="{Binding FileTarget}" FontSize="10" FontFamily="Poppins" />
+                    <DataGridTextColumn x:Name="HeaderType" Header="type" Binding="{Binding SaveType}" FontSize="10" FontFamily="Poppins"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <Label Grid.Row="3" Grid.ColumnSpan="2" Margin="0,38,0,0" Grid.RowSpan="2">
+            <Button x:Name="RunSelectedJob" Click="RunSelectedJob_Click">Run</Button>
+        </Label>
+
+        <Grid Grid.Row="5" Grid.ColumnSpan="3">
+
+            <DataGrid IsReadOnly="True" x:Name="datagridActiveJob" AutoGenerateColumns="False" Width="Auto" SelectionChanged="datagridBackupJob_SelectionChanged"  HorizontalAlignment="Stretch" CanUserSortColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn x:Name="HeaderActiveName" Header="Name" Binding="{Binding Name}" FontSize="10" FontFamily="Poppins" />
+                    <DataGridTextColumn x:Name="HeaderActiveIsPosed" Header="IsPaused" Binding="{Binding IsPaused}" FontSize="10" FontFamily="Poppins" />
+                    <DataGridTextColumn x:Name="HeaderActiveTargetDirectory" Header="Progress" Binding="{Binding Progress}" FontSize="10" FontFamily="Poppins" />
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="PauseResume" Content="Pause/Resume" Click="PauseResumeButton"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="Stop" Content="Stop" Click="Stop_Button" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+   </Border>
+</UserControl>

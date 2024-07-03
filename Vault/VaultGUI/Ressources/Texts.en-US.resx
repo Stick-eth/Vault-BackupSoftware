@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddExt" xml:space="preserve">
+    <value>Add extension</value>
+  </data>
+  <data name="AddToList" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="AddToList1" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="AllJobs_Empty" xml:space="preserve">
+    <value>No backup jobs have been created.</value>
+  </data>
+  <data name="AppRunning_Error" xml:space="preserve">
+    <value>Please close all business applications to perform a backup.</value>
+  </data>
+  <data name="backupbtn" xml:space="preserve">
+    <value>Backups</value>
+  </data>
+  <data name="BackupListTitle" xml:space="preserve">
+    <value>Backups List</value>
+  </data>
+  <data name="BackupNameTitle" xml:space="preserve">
+    <value>Backup Name</value>
+  </data>
+  <data name="configbtn" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="CreateBackupJob" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="CreateSave" xml:space="preserve">
+    <value>Create Backup</value>
+  </data>
+  <data name="DestFolderTitle" xml:space="preserve">
+    <value>Target Folder</value>
+  </data>
+  <data name="DifferentialSave" xml:space="preserve">
+    <value>Differential</value>
+  </data>
+  <data name="DirectoryTargetInsideSourceError" xml:space="preserve">
+    <value>Invalid argument, the folder destination can't be inside the source folder</value>
+  </data>
+  <data name="DocButton" xml:space="preserve">
+    <value>Get the documentation</value>
+  </data>
+  <data name="EditBtn" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="ErrorAddProcess" xml:space="preserve">
+    <value>Error while adding a new app to monitor</value>
+  </data>
+  <data name="ErrorCreateLogFile" xml:space="preserve">
+    <value>Error creating the log file :</value>
+  </data>
+  <data name="ErrorCreateRTLogFile" xml:space="preserve">
+    <value>Error creating real-time status file :</value>
+  </data>
+  <data name="ErrorCreateSaveFile" xml:space="preserve">
+    <value>Error creating task backup file :</value>
+  </data>
+  <data name="ErrorFileCopy" xml:space="preserve">
+    <value>An error has occurred while copying </value>
+  </data>
+  <data name="ErrorRemoveProcess" xml:space="preserve">
+    <value>Error while removing a monitored app</value>
+  </data>
+  <data name="ErrorWriteLogFile" xml:space="preserve">
+    <value>Error writing to the log file :</value>
+  </data>
+  <data name="ErrorWriteSaveFile" xml:space="preserve">
+    <value>Error writing to task backup file :</value>
+  </data>
+  <data name="ExtToEncryptTitle" xml:space="preserve">
+    <value>Extensions to encrypt</value>
+  </data>
+  <data name="ExtToPrioritizeTitle" xml:space="preserve">
+    <value>Extensions to prioritize</value>
+  </data>
+  <data name="FullSave" xml:space="preserve">
+    <value>Full</value>
+  </data>
+  <data name="HeaderName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="HeaderSourceDirectory" xml:space="preserve">
+    <value>Source</value>
+  </data>
+  <data name="HeaderTargetDirectory" xml:space="preserve">
+    <value>Target</value>
+  </data>
+  <data name="HeaderType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="homebtn" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="HomeFilesTransfert" xml:space="preserve">
+    <value>Transfered files</value>
+  </data>
+  <data name="HomeLastSave" xml:space="preserve">
+    <value>Last running save</value>
+  </data>
+  <data name="HomeStorageUsed" xml:space="preserve">
+    <value>Disks Storage</value>
+  </data>
+  <data name="HomeTips" xml:space="preserve">
+    <value>Tips : Use differential save more often !</value>
+  </data>
+  <data name="HomeWelcome" xml:space="preserve">
+    <value>Welcome,</value>
+  </data>
+  <data name="InexistantSourceDirectoryError" xml:space="preserve">
+    <value>The selected source folder does not exist : </value>
+  </data>
+  <data name="InexistantTargetDirectoryError" xml:space="preserve">
+    <value>The selected destination folder does not exist : </value>
+  </data>
+  <data name="InvalidArgumentIntegersOnlyError" xml:space="preserve">
+    <value>Invalid argument, you must only specify integers in the selection.</value>
+  </data>
+  <data name="InvalidArgumentOneRangeError" xml:space="preserve">
+    <value>Invalid argument, you must only specify a range with an index between 1 and </value>
+  </data>
+  <data name="InvalidArgumentSelectionRangeError" xml:space="preserve">
+    <value>Invalid argument, you must only specify integers in the selection between 1 and </value>
+  </data>
+  <data name="InvalidArgumentSelectionsDetailedError" xml:space="preserve">
+    <value>Invalid argument, you must select a single save or a range of saves using ';' or '-', the selected numbers must be between 1 and </value>
+  </data>
+  <data name="InvalidArgumentSelectionsRangeError" xml:space="preserve">
+    <value>Invalid argument, selections must be between 1 and</value>
+  </data>
+  <data name="InvalidOption" xml:space="preserve">
+    <value>Invalid entry. Please choose a valid option.</value>
+  </data>
+  <data name="InvalidSaveTypeError" xml:space="preserve">
+    <value>Backup type unknown for BackupJob :</value>
+  </data>
+  <data name="JobConfTitle" xml:space="preserve">
+    <value>Backups Configuration</value>
+  </data>
+  <data name="LogFormatTitle" xml:space="preserve">
+    <value>Log files format</value>
+  </data>
+  <data name="MainName" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="NameAlreadyUsedError" xml:space="preserve">
+    <value>Name already used for another save.</value>
+  </data>
+  <data name="RemoveBtn" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="RemoveFromList" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="RemoveFromList1" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="RunSelectedJob" xml:space="preserve">
+    <value>Run</value>
+  </data>
+  <data name="SaveButton" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="SaveButton1" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="SaveName" xml:space="preserve">
+    <value>Backup Name</value>
+  </data>
+  <data name="SaveTypeTitle" xml:space="preserve">
+    <value>Backups Type</value>
+  </data>
+  <data name="SelectedExt" xml:space="preserve">
+    <value>Selected extensions</value>
+  </data>
+  <data name="SelectFolder" xml:space="preserve">
+    <value>Select Folder</value>
+  </data>
+  <data name="SelectSourceFolder" xml:space="preserve">
+    <value>Select Folder</value>
+  </data>
+  <data name="SelectTargetFolder" xml:space="preserve">
+    <value>Select Folder</value>
+  </data>
+  <data name="SettingsAddapp" xml:space="preserve">
+    <value>Add app</value>
+  </data>
+  <data name="settingsbtn" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="SettingsBuisnessAppTitle" xml:space="preserve">
+    <value>Business apps</value>
+  </data>
+  <data name="SettingsLangTitle" xml:space="preserve">
+    <value>Change language</value>
+  </data>
+  <data name="SettingsLogPathTitle" xml:space="preserve">
+    <value>Folder log location</value>
+  </data>
+  <data name="SettingsSelectedApps" xml:space="preserve">
+    <value>Selected apps</value>
+  </data>
+  <data name="SettingsTitle" xml:space="preserve">
+    <value>Application Settings</value>
+  </data>
+  <data name="SourceFolderTitle" xml:space="preserve">
+    <value>Source Folder</value>
+  </data>
+  <data name="Subscribebtn" xml:space="preserve">
+    <value>Subscribe to pro</value>
+  </data>
+</root>
