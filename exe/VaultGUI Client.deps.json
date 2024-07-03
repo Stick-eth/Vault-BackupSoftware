@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "VaultGUI Client/1.0.0": {
+        "runtime": {
+          "VaultGUI Client.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "VaultGUI Client/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
